@@ -1,0 +1,169 @@
+
+
+$color-background: #5D4954;
+$color-white: #fff;
+$color-black: #262626;
+.navbar{
+    background-color: $color-background;
+    font-size: 1.6rem;
+    color: $color-white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    min-height: 7rem;
+    position: relative;
+    /* ===== fixed ====
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    */
+
+    &__logo{
+        font-size: 1.6rem;
+        font-weight: bold;
+        word-spacing: .5rem;
+        letter-spacing: .5rem;
+    }
+
+    .navigation{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__item{
+            position: relative;
+            &:not(:first-child){
+                margin-left: 4rem;
+                @media screen and (max-width: 1024px){
+                    margin: 0;
+                }
+            }
+
+            &:hover .dropdown{
+                display: block;
+                @media screen and (max-width: 1024px){
+                    display: none;
+                }
+            }
+
+            &--link, &--link:link, &--link:visited{
+                text-decoration: none;
+                color:$color-white;
+                cursor: pointer;
+                display: inline-block;
+                width: 100%;
+                padding: 1rem 2rem;
+                border-radius: .5rem;
+                transition: all .2s;
+                &:hover{
+                    background-color: $color-white;
+                    color: $color-black;
+                }
+            }
+
+
+            .dropdown{
+                display: none;
+                min-width: 30rem;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                border-radius: .4rem;
+                padding: 1rem 0rem;
+                background-color: $color-background;
+                .navigation{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    padding: 0;
+
+                    &__item{
+                        margin: 0;
+                        width: 100%
+                    }
+
+                    @media screen and (max-width:1024px) {
+                        display: block;
+                        position: static;
+                        width: 100%;
+                        height: auto;
+                        transform: translateX(0%);
+                    }
+                }
+
+                @media screen and (max-width:1024px) {
+                    display: none;
+                    position: static;
+                    padding: 0 1rem;
+                    background-color: $color-background
+                }
+            }
+
+            @media screen and (max-width:1024px) {
+                width: 100%;
+                // opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 1024px){
+            position: absolute;
+            top: 7rem;
+            right: 0;
+            height: 92vh;
+            width: 30%;
+            background-color: $color-background;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            transform: translateX(100%);
+            transition: all .2s;
+        }
+    }
+
+    .burger{
+        position: absolute;
+        top: 50%;
+        right: 4rem;
+        transform: translateY(-50%);
+        height: 4rem;
+        width: 4rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-direction: column;
+        cursor: pointer;
+
+        display: none;
+
+        @media screen and (max-width: 1024px){
+            display: flex;
+        }
+        .line{
+            height: .2rem;
+            width: 100%;
+            background-color: $color-white;
+            
+            &:not(:last-child){
+                margin-bottom: .1rem;
+            }
+        }
+    }
+
+    .nav-active{
+        transform: translateX(0%)
+    }
+}
+
+@keyframes navItemFadeIn{
+    0%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}

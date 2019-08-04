@@ -52,7 +52,7 @@ class StatusForm extends React.Component{
                     }
 
                     <div className="status__form__footer">
-                        <button type='submit'>Upload</button>
+                        <button type='submit'>Post Status</button>
                     </div>
                 </form>
                 
