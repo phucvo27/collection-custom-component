@@ -12,6 +12,7 @@ function App() {
           <StatusForm />
           <Carousel />
       </div>
+
       </React.Fragment>
       
   );
