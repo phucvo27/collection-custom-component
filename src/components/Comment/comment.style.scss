@@ -1,0 +1,33 @@
+.comment{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &__avatar{
+        img{
+            height: 2.4rem;
+            width: 2.4rem;
+            border-radius: 50%;
+        }
+    }
+    &__text{
+        margin-left: 1.5rem;
+        &--name{
+            h3{
+                font-size: 1.4rem;
+                font-weight: normal;
+                margin-bottom: 1rem;
+                transition: color .2s;
+                cursor: pointer;
+                &:hover{
+                    color: #e95b3a;
+                }
+            }
+            
+        }
+        &--content{
+            font-size: 1.2rem;
+            color: #888DA8;
+        }
+    }
+}
