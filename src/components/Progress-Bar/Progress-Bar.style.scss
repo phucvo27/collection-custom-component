@@ -1,0 +1,26 @@
+$color-yellow: #ffcd38;
+:root{
+    --width-start: 0%;
+    --width-end: 0%;
+}
+.progress__container{
+    width: 100%;
+    padding: .4rem;
+    border-radius: .9rem;
+    border: .1rem solid $color-yellow;
+
+    .progress{
+        background-color: #ffcd38;
+        height: 1rem;
+        border-radius: .9rem;
+        animation: expanding 1s ease-in-out 0s forwards;
+    }
+}
+@keyframes expanding {
+    0% {
+        width: var(--width-start)
+    }
+    100% {
+        width: var(--width-end)
+    }
+}
